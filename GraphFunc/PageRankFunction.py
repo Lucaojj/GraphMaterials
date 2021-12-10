@@ -97,9 +97,9 @@ def PageRank(path_edge_file, conexion, iteration):
             parent_node.link_child(child_node)
             child_node.link_parent(parent_node)
 
-        def display(self):
-            for node in self.nodes:
-                print(f'{node.name} links to {[child.name for child in node.children]}')
+#        def display(self):
+#            for node in self.nodes:
+#               print(f'{node.name} links to {[child.name for child in node.children]}')
 
         def sort_nodes(self):
             self.nodes.sort(key=lambda node: int(node.name))
