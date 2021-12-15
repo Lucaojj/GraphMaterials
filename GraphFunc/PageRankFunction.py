@@ -157,7 +157,7 @@ def PageRank(path_edge_file, conexion, iteration):
 
         return graph
 
-    def PageRank(graph, iteration, conexion):
+    def PageRankInt(graph, iteration, conexion):
         for i in range(iteration):
             last = PageRank_one_iter(graph, conexion)
         return(last)
@@ -170,7 +170,7 @@ def PageRank(path_edge_file, conexion, iteration):
         return(graph.get_pagerank_list())
     
     graph = init_graph(path_edge_file)
-    info = PageRank(graph, iteration, conexion)
+    info = PageRankInt(graph, iteration, conexion)
     
     print('Number of total nodes: {}'.format(len(info)),
           '\n\nBest connected node: {}'.format(np.argmax(info)),
