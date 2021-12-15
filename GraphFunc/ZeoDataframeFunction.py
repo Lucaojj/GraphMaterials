@@ -64,11 +64,13 @@ def ZeoDataframe(path_nt2, multiplier, box):
                     x_sim = int(line_list[4])
                     y_sim = int(line_list[5])
                     z_sim = int(line_list[6])
-                    edge_table = edge_table.append({'origin':origin, 'destination': destination, 'x_sim':x_sim,
-                                                    'y_sim':y_sim, 'z_sim':z_sim,'larger_radius':larger_radius},
-                                                   ignore_index = True)
-
-
+                    if sum([abs(x_sim), abs(y_sim), abs(z_sim)]) == 0:
+                        edge_table = edge_table.append({'origin':origin, 'destination': destination, 'x_sim':x_sim,
+                                                        'y_sim':y_sim, 'z_sim':z_sim,'larger_radius':larger_radius},
+                                                       ignore_index = True)
+                        print('change')
+                    else:
+                        pass
     dim = 3
 
 
