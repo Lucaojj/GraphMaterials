@@ -68,7 +68,7 @@ def ZeoDataframe(path_nt2, multiplier, box):
                         edge_table = edge_table.append({'origin':origin, 'destination': destination, 'x_sim':x_sim,
                                                         'y_sim':y_sim, 'z_sim':z_sim,'larger_radius':larger_radius},
                                                        ignore_index = True)
-                        print('change')
+                        #print('change')
                     else:
                         pass
     dim = 3
