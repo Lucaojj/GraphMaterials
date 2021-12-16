@@ -48,7 +48,7 @@ if __name__ == '__main__':
     lattice_mult = options.lattice_mult
     supercell_path = 'SupercellFiles/Super' + str(name_mat) + str(lattice_mult) + '.cif'
     #supercell_path = options.supercell_file
-    nt2_path = 'Nt2Files/Super' + str(name_mat) + str(lattice_mult) + '.nt2'
+    nt2_path = 'SupercellFiles/Super' + str(name_mat) + str(lattice_mult) + '.nt2'
     #nt2_path = options.nt2_file
     bound_path = 'BoundFiles/Bound' + str(name_mat) + str(lattice_mult) + '.text'
     #bound_path = options.bound_file
