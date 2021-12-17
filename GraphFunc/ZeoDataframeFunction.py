@@ -12,10 +12,11 @@
 
 
 def ZeoDataframe(path_nt2, multiplier, box):
-
+    
     import pandas as pd
     import numpy as np
-
+    x_1 = 70
+    
     # All Data
     path_to_file = path_nt2
     alldata = pd.read_csv(path_to_file)
@@ -68,6 +69,22 @@ def ZeoDataframe(path_nt2, multiplier, box):
                         edge_table = edge_table.append({'origin':origin, 'destination': destination, 'x_sim':x_sim,
                                                         'y_sim':y_sim, 'z_sim':z_sim,'larger_radius':larger_radius},
                                                        ignore_index = True)
+                        
+                    elif x_sim == 1:
+                        edge_table = edge_table.append({'origin':origin,'destination':str(int(destination) + x_1),
+                                                        'x_sim':x_sim,
+                                                        'y_sim':y_sim, 'z_sim':z_sim,
+                                                        'larger_radius':larger_radius},ignore_index = True)
+                        edge_table = edge_table.append({'origin':str(int(destination) + x_1),'destination':origin,
+                                                        'x_sim':x_sim,
+                                                        'y_sim':y_sim, 'z_sim':z_sim,
+                                                        'larger_radius':larger_radius},ignore_index = True)
+                        
+                        vertex_table = vertex_table.append({
+                            'coord_x':vertex_table.loc[vertex_table['key']  == str(destination), ['coord_x']].values[0][0] + box[0],                               
+                            'coord_y':vertex_table.loc[vertex_table['key']  == str(destination),['coord_y']].values[0][0],                                 'coord_z':vertex_table.loc[vertex_table['key']  == str(destination), ['coord_z']].values[0][0],
+                            'min_dist_atom':vertex_table.loc[vertex_table['key']  == str(destination),['min_dist_atom']].values[0][0],
+                            'key':str(int(destination) + x_1)},ignore_index = True)
                         #print('change')
                     else:
                         pass
