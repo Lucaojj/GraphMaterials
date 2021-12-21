@@ -70,7 +70,7 @@ def ZeoDataframe(path_nt2, multiplier, box):
                                                         'y_sim':y_sim, 'z_sim':z_sim,'larger_radius':larger_radius},
                                                        ignore_index = True)
                         
-                    elif x_sim == 1:
+                    elif x_sim == 8:
                         edge_table = edge_table.append({'origin':origin,'destination':str(int(destination) + x_1),
                                                         'x_sim':x_sim,
                                                         'y_sim':y_sim, 'z_sim':z_sim,
